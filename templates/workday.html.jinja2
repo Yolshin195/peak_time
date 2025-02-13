@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Трекер рабочего дня</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h3 class="text-center">Трекер рабочего дня</h3>
+    <table class="table table-bordered text-center">
+        <tbody>
+        <tr>
+            <th>Рабочий день</th>
+            <td colspan="3">{{ workday.created_at.strftime("%Y-%m-%d") }}</td>
+        </tr>
+        <tr>
+            <th>Начало дня</th>
+            <td colspan="3">
+                {% if workday.start_time %}
+                    {{ workday.start_time }}
+                {% else %}
+                    <button class="btn btn-success">Начать</button>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Окончание дня</th>
+            <td colspan="3">
+                {% if workday.end_time %}
+                    {{ workday.end_time }}
+                {% else %}
+                    <button class="btn btn-danger">Закончить</button>
+                {% endif %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+            <th>Sprint</th>
+            <th>Task</th>
+            <th>Start</th>
+            <th>Stop</th>
+            <th>Помидоро Тайм</th>
+            <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td>11:20</td>
+            <td>11:30</td>
+            <td></td>
+            <td>Создание таблицы</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>CS246-1097</td>
+            <td>11:40</td>
+            <td>11:55</td>
+            <td></td>
+            <td>Доработка тестов</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CS246-1109</td>
+            <td>11:55</td>
+            <td>12:05</td>
+            <td></td>
+            <td>Анализ задачи</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>CS246-1109</td>
+            <td>13:54</td>
+            <td></td>
+            <td>0,0,1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
